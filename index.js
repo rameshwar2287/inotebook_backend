@@ -4,7 +4,13 @@ var cors = require('cors')
 mongoConnect();
 
 const app = express()
-app.use(cors())
+app.use(cors(
+  {
+    origin:[],
+    methods:["POST","GET"],
+    credentials:true
+  }
+))
 const port = 9000
 // available Routes
 app.use(express.json())
